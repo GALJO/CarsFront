@@ -5,13 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './title-bar.component.html',
   styleUrls: ['./title-bar.component.css']
 })
-export class TitleBarComponent implements OnInit {
+export class TitleBarComponent {
 
-  version = "alpha 0.1";
+  title: string = 'Carspedia';
+  version: number = 0.1;
 
-  constructor() { }
+  getVersion() {
+    return this.version;
+  }
 
-  ngOnInit() {
+  getTitle() {
+    return this.title;
   }
 
 }
