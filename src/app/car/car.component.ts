@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
-  mark: string = "Volkswagen";
-  model: string = "Passat B1";
-  productionYear: string = "1987-1992";
+  mark: String = 'Volkswagen';
+  model: String = 'Passat B1';
+  productionYear: String = '1973-1977';
+  fuelTank: String = '45l';
+  designer: String = 'Giorgetto Giugiaro';
+
+  showMoreInfo: Boolean = false;
 
   constructor() { }
 
@@ -26,5 +30,7 @@ export class CarComponent implements OnInit {
 
   onMoreInfo() {
     console.log('More Info');
+    this.showMoreInfo = !this.showMoreInfo;
   }
+
 }

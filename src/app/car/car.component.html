@@ -1,14 +1,15 @@
 <div class="row alert alert-secondary">
   <div class="col-md-2" (click)="onMoreInfo()">
-    <img src="https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/fiat-multiplaI.jpg?alt=media&token=7b26bddf-5afe-4d0d-9ca6-b71388105107" class="img-fluid" alt="Fiat Multipla">
+    <img src="https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passaatB1.jpg?alt=media&token=dab074ed-acfd-4a2e-9111-870bccabcf45" class="img-fluid" alt="Fiat Multipla">
   </div>
   <div class="col-md-7" (click)="onMoreInfo()">
-          Marka: {{ mark }}<br>Model: {{ model }}<br>Lata produkcji: {{ productionYear }}
+          <p>Marka: {{ mark }}<br>Model: {{ model }}<br>Lata produkcji: {{ productionYear }}</p>
+          <p *ngIf="showMoreInfo">Zbiornik paliwa: {{ fuelTank }}<br>Projektant: {{ designer }}</p>
   </div>
   <div class="col-md-3">
       <div class="btn-group-vertical">
-          <button type="button" class="btn btn-primary" (click)="onEdit()">Edit✎</button>
-          <button type="button" class="btn btn-danger" (click)="onDelete()">Delete🗑</button>
+          <button type="button" class="btn btn-primary" (click)="onEdit()">Edytuj✎</button>
+          <button type="button" class="btn btn-danger" (click)="onDelete()">Usuń🗑</button>
         </div>
   </div>
 </div>
