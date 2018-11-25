@@ -1,4 +1,4 @@
-<div class="row alert alert-secondary">
+<div [ngClass]="{row: true, alert: true, 'alert-secondary': showMoreInfo === false, 'alert-dark': showMoreInfo === true}">
   <div class="col-md-2" (click)="onMoreInfo()">
     <img src="https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passaatB1.jpg?alt=media&token=dab074ed-acfd-4a2e-9111-870bccabcf45" class="img-fluid" alt="Fiat Multipla">
   </div>
@@ -8,8 +8,8 @@
   </div>
   <div class="col-md-3">
       <div class="btn-group-vertical">
-          <button type="button" class="btn btn-primary" (click)="onEdit()">Edytuj✎</button>
-          <button type="button" class="btn btn-danger" (click)="onDelete()">Usuń🗑</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onEdit()">Edytuj✎</button>
+          <button type="button" class="btn btn-outline-danger" (click)="onDelete()">Usuń🗑</button>
         </div>
   </div>
 </div>
