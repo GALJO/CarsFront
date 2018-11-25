@@ -16,4 +16,15 @@ export class CarComponent implements OnInit {
   ngOnInit() {
   }
 
+  onEdit() {
+    console.log('Edit');
+  }
+
+  onDelete() {
+    console.log('Delete');
+  }
+
+  onMoreInfo() {
+    console.log('More Info');
+  }
 }
