@@ -1,7 +1,5 @@
-<div class="container-fluid">
-    <app-car></app-car>
-    <app-car></app-car>
-    <app-car></app-car>
-    <app-car></app-car>    
+<div class="list-group">
+    <app-car 
+        *ngFor="let item of carList"
+        [carItem]="item"></app-car>    
 </div>
-
