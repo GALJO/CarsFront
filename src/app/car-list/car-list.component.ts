@@ -8,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CarListComponent implements OnInit {
 
   carList = [];
+  newCar = {mark: '', model: '', productionYear: '', designer: '', fuelTank: null, image: ''};
 
   constructor() {
     // tslint:disable-next-line:max-line-length
-    this.carList.push({mark: 'Volkswagen', model: 'Passat B1', productionYear: '1973-1977', fuelTank: 45, designer: 'Giorgetto Giugiaro', image: 'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passaatB1.jpg?alt=media&token=dab074ed-acfd-4a2e-9111-870bccabcf45'});
+    this.carList.push({mark: 'Volkswagen', model: 'Passat B1', productionYear: '1973-1977', fuelTank: 45, designer: 'Giorgetto Giugiaro', image: 'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passat-b1.jpg?alt=media&token=934750e8-b1c8-4f6b-87d2-23ea76328865'});
     // tslint:disable-next-line:max-line-length
     this.carList.push({mark: 'Volkswagen', model: 'Passat B8', productionYear: 'od 2014', fuelTank: 70, designer: null, image: 'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passaatB8.jpg?alt=media&token=de2ad730-0b55-4b91-9be1-29fa8703c34e'});
     // tslint:disable-next-line:max-line-length
@@ -19,6 +20,10 @@ export class CarListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onAddCar() {
+    this.carList.push( this.newCar );
   }
 
 }

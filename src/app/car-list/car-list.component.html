@@ -1,4 +1,30 @@
-<div class="list-group">
+<div class="row mt-2">
+        <div class="col-md-2">
+          <input type="text" class="form-control" placeholder="Marka" [(ngModel)]="newCar.mark">
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" placeholder="Model" [(ngModel)]="newCar.model">
+        </div>
+        <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="Lata Produkcji" [(ngModel)]="newCar.productionYear">
+        </div>
+        <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Projektant" [(ngModel)]="newCar.designer">
+        </div>
+        <div class="col-md-2">
+                <input type="number" class="form-control" placeholder="Zbiornik Paliwa (w litrach)" [(ngModel)]="newCar.fuelTank">
+        </div>
+      </div>
+<div class="row">
+    <div class="col-md-10 mt-2">
+            <input type="text" class="form-control" placeholder="Link do Zdjęcia" [(ngModel)]="newCar.image">
+    </div>
+    <div class="col-md-2 mt-2">
+            <button (click)="onAddCar()" type="button" class="btn btn-info">Dodaj Samochód</button>            
+    </div>
+</div>
+
+<div class="list-group"> 
     <app-car 
         *ngFor="let item of carList"
         [carItem]="item"></app-car>    
