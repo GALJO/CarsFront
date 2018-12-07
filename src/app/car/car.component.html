@@ -1,17 +1,30 @@
-<a href="#" class="list-group-item list-group-item-action mt-2">
+<a href="#" class="list-group-item list-group-item-action mt-2 list-group-item-light">
   <div class="row">
     <div class="col-md-2" (click)="onMoreInfo()">
-      <img src="{{ carItem.image }}" class="img-fluid" alt="{{ carItem.mark }} {{ carItem.model }}">
+      <img src="{{ carItem.image == null ? '/' : carItem.image }}" class="img-fluid" alt="{{ carItem.mark == null ? 'brak' : carItem.mark }} {{ carItem.model == null ? 'danych' : carItem.model }}">
     </div>
     <div class="col-md-7" (click)="onMoreInfo()">
-            <p>Marka: {{ carItem.mark }}<br>Model: {{ carItem.model }}<br>Lata produkcji: {{ carItem.productionYear }}</p>
-            <p *ngIf="showMoreInfo">Zbiornik paliwa: {{ carItem.fuelTank }}l<br>Projektant: {{ carItem.designer == null ? 'brak danych' : carItem.designer }}</p>
+          <div>
+            Marka: {{ carItem.mark == null ? 'brak danych' : carItem.mark}}<br>
+            Model: {{ carItem.model == null ? 'brak danych' : carItem.model }}<br>
+            Lata produkcji: {{ carItem.productionYear == null ? 'brak danych' : carItem.productionYear }}
+          </div>
+          <div *ngIf="showMoreInfo">
+            Zbiornik paliwa: {{ carItem.fuelTank == null ? 'brak danych' : carItem.fuelTank + 'l' }}<br>
+            Projektant: {{ carItem.designer == null ? 'brak danych' : carItem.designer }}<br>
+            Napęd: {{ carItem.drive == null ? 'brak danych' : carItem.drive }}<br>
+            Skrzynie Biegów:<br>
+            <div *ngFor="let gearbox of carItem.gearboxes; let i = index">
+              {{i + 1}}: Biegi: {{ gearbox.gears }}, Typ: {{ gearbox.type }}
+            </div>
+            Ładowność: {{ carItem.capacity == null ? 'brak danych' : carItem.capacity }}
+          </div>
     </div>
     <div class="col-md-3">
         <div class="btn-group-vertical">
-            <button type="button" class="btn btn-outline-primary" (click)="onEdit()">Edytuj <i class="far fa-edit"></i></button>
-            <button type="button" class="btn btn-outline-danger" (click)="onDelete()">Usuń <i class="fas fa-trash-alt"></i></button>
-          </div>
+          <button type="button" class="btn btn-outline-primary" (click)="onEdit()">Edytuj <i class="far fa-edit"></i></button>
+          <button type="button" class="btn btn-outline-danger" (click)="onDelete()">Usuń <i class="fas fa-trash-alt"></i></button>
+        </div>
     </div>
   </div>
 </a>
