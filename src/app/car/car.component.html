@@ -5,20 +5,34 @@
     </div>
     <div class="col-md-7" (click)="onMoreInfo()">
           <div>
-            Marka: {{ carItem.mark == null ? 'brak danych' : carItem.mark}}<br>
+            Marka: {{ carItem.mark == null ? 'brak danych' : carItem.mark }}<br>
             Model: {{ carItem.model == null ? 'brak danych' : carItem.model }}<br>
             Lata produkcji: {{ carItem.productionYear == null ? 'brak danych' : carItem.productionYear }}
           </div>
+          <!-- Informacje pokazywane na klik -->
           <div *ngIf="showMoreInfo">
             Zbiornik paliwa: {{ carItem.fuelTank == null ? 'brak danych' : carItem.fuelTank + 'l' }}<br>
             Projektant: {{ carItem.designer == null ? 'brak danych' : carItem.designer }}<br>
             Napęd: {{ carItem.drive == null ? 'brak danych' : carItem.drive }}<br>
+            Ładowność: {{ carItem.capacity == null ? 'brak danych' : carItem.capacity }}<br>
+            Wersje wyposazenia: {{ carItem.eqVersions == null ? 'brak danych' : carItem.eqVersions }}<br><br>
+            <!-- Tablice obiektów -->
             Skrzynie Biegów:<br>
             <div *ngFor="let gearbox of carItem.gearboxes; let i = index">
-              {{i + 1}}: Biegi: {{ gearbox.gears }}, Typ: {{ gearbox.type }}
+              {{i + 1}} Biegi: {{ gearbox.gears == null ? 'brak danych' : gearbox.gears }}, Typ: {{ gearbox.type == null ? 'brak danych' : gearbox.type }}
+            </div><br>
+
+            Silniki:<br>
+            <div *ngFor="let engine of carItem.engines; let i = index">
+              {{i + 1}}: Nazwa: {{ engine.name == null ?   'brak danych' : engine.name }}, Liczba Koni Mechanicznych: {{ engine.hp == null ? 'brak danych' : engine.hp }} Typ: {{ engine.type == null ? 'brak danych' : engine.type }}
+            </div><br>
+
+            Wersje Nadwozia:<br>
+            <div *ngFor="let typeOfBody of carItem.typesOfBody; let i = index">
+              {{i + 1}}: Nazwa: {{ typeOfBody.name == null ? 'brak danych' : typeOfBody.name }}, Bagażnik: {{ typeOfBody.carrier == null ? 'brak danych' : typeOfBody.carrier }} Liczba Drzwi: {{ typeOfBody.doors == null ? 'brak danych' : typeOfBody.doors }}
             </div>
-            Ładowność: {{ carItem.capacity == null ? 'brak danych' : carItem.capacity }}
           </div>
+         
     </div>
     <div class="col-md-3">
         <div class="btn-group-vertical">
