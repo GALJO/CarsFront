@@ -41,7 +41,7 @@
             </div>
             <div class="row">
               <div class="col-md">
-                Ładowność: {{ carItem.capacity == null ? 'brak danych' : carItem.capacity }}
+                Ładowność: {{ carItem.capacity == null ? 'brak danych' : carItem.capacity + 'l' }}
               </div>
             </div>
             <div class="row">
@@ -62,7 +62,7 @@
               </div>             
               <div class="row" *ngFor="let gearbox of carItem.gearboxes; let i = index">
                 <div class="col-md">
-                    {{i + 1}} Biegi: {{ gearbox.gears == null ? 'brak danych' : gearbox.gears }}, Typ: {{ gearbox.type == null ? 'brak danych' : gearbox.type }}
+                    {{i + 1}}: Biegi: {{ gearbox.gears == null ? 'brak danych' : gearbox.gears }}, Typ: {{ gearbox.type == null ? 'brak danych' : gearbox.type }}
                 </div>
               </div>
             </div>
