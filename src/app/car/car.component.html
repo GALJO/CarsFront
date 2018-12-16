@@ -3,42 +3,110 @@
     <div class="col-md-2" (click)="onMoreInfo()">
       <img src="{{ carItem.image == null ? '/' : carItem.image }}" class="img-fluid" alt="{{ carItem.mark == null ? 'brak' : carItem.mark }} {{ carItem.model == null ? 'danych' : carItem.model }}">
     </div>
-    <div class="col-md-7" (click)="onMoreInfo()">
-          <div>
-            Marka: {{ carItem.mark == null ? 'brak danych' : carItem.mark }}<br>
-            Model: {{ carItem.model == null ? 'brak danych' : carItem.model }}<br>
-            Lata produkcji: {{ carItem.productionYear == null ? 'brak danych' : carItem.productionYear }}
+
+    <div class="col-md-10" (click)="onMoreInfo()">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-md">
+                Marka: {{ carItem.mark == null ? 'brak danych' : carItem.mark }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+                Model: {{ carItem.model == null ? 'brak danych' : carItem.model }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+                Lata produkcji: {{ carItem.productionYear == null ? 'brak danych' : carItem.productionYear }}
+            </div>
           </div>
           <!-- Informacje pokazywane na klik -->
           <div *ngIf="showMoreInfo">
-            Zbiornik paliwa: {{ carItem.fuelTank == null ? 'brak danych' : carItem.fuelTank + 'l' }}<br>
-            Projektant: {{ carItem.designer == null ? 'brak danych' : carItem.designer }}<br>
-            Napęd: {{ carItem.drive == null ? 'brak danych' : carItem.drive }}<br>
-            Ładowność: {{ carItem.capacity == null ? 'brak danych' : carItem.capacity }}<br>
-            Wersje wyposazenia: {{ carItem.eqVersions == null ? 'brak danych' : carItem.eqVersions }}<br><br>
-            <!-- Tablice obiektów -->
-            Skrzynie Biegów:<br>
-            <div *ngFor="let gearbox of carItem.gearboxes; let i = index">
-              {{i + 1}} Biegi: {{ gearbox.gears == null ? 'brak danych' : gearbox.gears }}, Typ: {{ gearbox.type == null ? 'brak danych' : gearbox.type }}
-            </div><br>
-
-            Silniki:<br>
-            <div *ngFor="let engine of carItem.engines; let i = index">
-              {{i + 1}}: Nazwa: {{ engine.name == null ?   'brak danych' : engine.name }}, Liczba Koni Mechanicznych: {{ engine.hp == null ? 'brak danych' : engine.hp }} Typ: {{ engine.type == null ? 'brak danych' : engine.type }}
-            </div><br>
-
-            Wersje Nadwozia:<br>
-            <div *ngFor="let typeOfBody of carItem.typesOfBody; let i = index">
-              {{i + 1}}: Nazwa: {{ typeOfBody.name == null ? 'brak danych' : typeOfBody.name }}, Bagażnik: {{ typeOfBody.carrier == null ? 'brak danych' : typeOfBody.carrier }} Liczba Drzwi: {{ typeOfBody.doors == null ? 'brak danych' : typeOfBody.doors }}
+            <div class="row">
+              <div class="col-md">
+                  Zbiornik paliwa: {{ carItem.fuelTank == null ? 'brak danych' : carItem.fuelTank + 'l' }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md">
+                  Projektant: {{ carItem.designer == null ? 'brak danych' : carItem.designer }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md">
+                Napęd: {{ carItem.drive == null ? 'brak danych' : carItem.drive }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md">
+                Ładowność: {{ carItem.capacity == null ? 'brak danych' : carItem.capacity }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md">
+                Wersje wyposazenia: {{ carItem.eqVersions == null ? 'brak danych' : carItem.eqVersions }}
+              </div>
             </div>
           </div>
-         
-    </div>
-    <div class="col-md-3">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-outline-primary" (click)="onEdit()">Edytuj <i class="far fa-edit"></i></button>
-          <button type="button" class="btn btn-outline-danger" (click)="onDelete()">Usuń <i class="fas fa-trash-alt"></i></button>
         </div>
+        <!-- Tablice obiektów -->
+        <div class="col-md-7 mt-2" *ngIf="showMoreInfo">
+          <div class="row">
+            <div class="col-md">
+              <div class="row">
+                <div class="col-md">
+                    Skrzynie Biegów:
+                </div>
+              </div>             
+              <div class="row" *ngFor="let gearbox of carItem.gearboxes; let i = index">
+                <div class="col-md">
+                    {{i + 1}} Biegi: {{ gearbox.gears == null ? 'brak danych' : gearbox.gears }}, Typ: {{ gearbox.type == null ? 'brak danych' : gearbox.type }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md">
+              <div class="row">
+                <div class="col-md">
+                    Silniki:
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md">
+                  <div *ngFor="let engine of carItem.engines; let i = index">
+                    {{i + 1}}: Nazwa: {{ engine.name == null ?   'brak danych' : engine.name }}, Liczba Koni Mechanicznych: {{ engine.hp == null ? 'brak danych' : engine.hp }} Typ: {{ engine.type == null ? 'brak danych' : engine.type }}
+                  </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md">
+              <div class="row">
+                <div class="col-md">
+                  Wersje Nadwozia:  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md">
+                  <div *ngFor="let typeOfBody of carItem.typesOfBody; let i = index">
+                    {{i + 1}}: Nazwa: {{ typeOfBody.name == null ? 'brak danych' : typeOfBody.name }}, Bagażnik: {{ typeOfBody.carrier == null ? 'brak danych' : typeOfBody.carrier }} Liczba Drzwi: {{ typeOfBody.doors == null ? 'brak danych' : typeOfBody.doors }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+      <div class="row">
+        <div class="col-md" *ngIf="showMoreInfo">
+            <button type="button" class="btn btn-outline-primary" (click)="onEdit()">Edytuj <i class="far fa-edit"></i></button>
+            <button type="button" class="btn btn-outline-danger ml-1" (click)="onDelete()">Usuń <i class="fas fa-trash-alt"></i></button>
+        </div>
+      </div>
     </div>
   </div>
 </a>
