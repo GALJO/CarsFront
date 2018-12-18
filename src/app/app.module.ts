@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TitleBarComponent } from './title-bar/title-bar.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarComponent } from './car/car.component';
+import { DataElementComponent } from './data-element/data-element.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleBarComponent,
     CarListComponent,
-    CarComponent
+    CarComponent,
+    DataElementComponent
   ],
   imports: [
     BrowserModule,

@@ -7,48 +7,17 @@
     <div class="col-md-10" (click)="onMoreInfo()">
       <div class="row">
         <div class="col-md-5">
-          <div class="row">
-            <div class="col-md">
-                Marka: {{ carItem.mark == null ? 'brak danych' : carItem.mark }}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md">
-                Model: {{ carItem.model == null ? 'brak danych' : carItem.model }}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md">
-                Lata produkcji: {{ carItem.productionYear == null ? 'brak danych' : carItem.productionYear }}
-            </div>
-          </div>
+          <app-data-element [key]="'Marka'" [value]="carItem.mark"></app-data-element>
+          <app-data-element [key]="'Model'" [value]="carItem.model"></app-data-element>
+          <app-data-element [key]="'Lata Produkcji'" [value]="carItem.productionYear"></app-data-element>
+
           <!-- Informacje pokazywane na klik -->
           <div *ngIf="showMoreInfo">
-            <div class="row">
-              <div class="col-md">
-                  Zbiornik paliwa: {{ carItem.fuelTank == null ? 'brak danych' : carItem.fuelTank + 'l' }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md">
-                  Projektant: {{ carItem.designer == null ? 'brak danych' : carItem.designer }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md">
-                Napęd: {{ carItem.drive == null ? 'brak danych' : carItem.drive }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md">
-                Ładowność: {{ carItem.capacity == null ? 'brak danych' : carItem.capacity + 'l' }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md">
-                Wersje wyposazenia: {{ carItem.eqVersions == null ? 'brak danych' : carItem.eqVersions }}
-              </div>
-            </div>
+            <app-data-element [key]="'Zbiornik Paliwa'" [value]="carItem.fuelTank"></app-data-element>
+            <app-data-element [key]="'Projektant'" [value]="carItem.designer"></app-data-element>
+            <app-data-element [key]="'Napęd'" [value]="carItem.drive"></app-data-element>
+            <app-data-element [key]="'Ładowność'" [value]="carItem.capacity"></app-data-element>
+            <app-data-element [key]="'Wersje Wyposazenia'" [value]="carItem.eqVersions"></app-data-element>
           </div>
         </div>
         <!-- Tablice obiektów -->
