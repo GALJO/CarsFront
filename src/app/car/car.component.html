@@ -10,13 +10,12 @@
           <app-data-element [key]="'Marka'" [value]="carItem.mark"></app-data-element>
           <app-data-element [key]="'Model'" [value]="carItem.model"></app-data-element>
           <app-data-element [key]="'Lata Produkcji'" [value]="carItem.productionYear"></app-data-element>
-
           <!-- Informacje pokazywane na klik -->
           <div *ngIf="showMoreInfo">
-            <app-data-element [key]="'Zbiornik Paliwa'" [value]="carItem.fuelTank"></app-data-element>
+            <app-data-element [key]="'Zbiornik Paliwa'" [value]="carItem.fuelTank" [suffix]="'l'"></app-data-element>
             <app-data-element [key]="'Projektant'" [value]="carItem.designer"></app-data-element>
             <app-data-element [key]="'Napęd'" [value]="carItem.drive"></app-data-element>
-            <app-data-element [key]="'Ładowność'" [value]="carItem.capacity"></app-data-element>
+            <app-data-element [key]="'Ładowność'" [value]="carItem.capacity" [suffix]="'l'"></app-data-element>
             <app-data-element [key]="'Wersje Wyposazenia'" [value]="carItem.eqVersions"></app-data-element>
           </div>
         </div>

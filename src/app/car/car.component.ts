@@ -25,7 +25,6 @@ export class CarComponent implements OnInit {
   }
 
   onMoreInfo() {
-    console.log('More Info');
     this.showMoreInfo = !this.showMoreInfo;
   }
 
