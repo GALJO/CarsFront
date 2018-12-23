@@ -1,10 +1,10 @@
 <li class="list-group-item list-group-item-action mt-2 list-group-item-light">
-  <div class="row">
-    <div class="col-md-2" (click)="onMoreInfo()">
+  <div class="row pointer" (click)="onMoreInfo()">
+    <div class="col-md-2">
       <img src="{{ carItem.image == null ? '/' : carItem.image }}" class="img-fluid" alt="{{ carItem.mark == null ? 'brak' : carItem.mark }} {{ carItem.model == null ? 'danych' : carItem.model }}">
     </div>
 
-    <div class="col-md-10" (click)="onMoreInfo()">
+    <div class="col-md-10">
       <div class="row">
         <div class="col-md-5">
           <app-data-element [key]="'Marka'" [value]="carItem.mark"></app-data-element>
@@ -26,12 +26,13 @@
           <app-body-types [bodyTypeList]="carItem.typesOfBody"></app-body-types>
         </div>        
       </div>
-      <div class="row">
-        <div class="col-md" *ngIf="showMoreInfo">
-            <button type="button" class="btn btn-outline-primary" (click)="onEdit()">Edytuj <i class="far fa-edit"></i></button>
-            <button type="button" class="btn btn-outline-danger ml-1" (click)="onDelete()">Usuń <i class="fas fa-trash-alt"></i></button>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="showMoreInfo">
+    <div class="col-12">
+      <hr />
+      <button type="button" class="btn btn-outline-primary" (click)="onEdit()">Edytuj <i class="far fa-edit"></i></button>
+      <button type="button" class="btn btn-outline-danger ml-1" (click)="onDelete()">Usuń <i class="fas fa-trash-alt"></i></button>
     </div>
   </div>
 </li>
