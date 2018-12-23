@@ -45,7 +45,9 @@
               <div class="row">
                 <div class="col-md">
                   <div *ngFor="let engine of carItem.engines; let i = index">
-                    {{i + 1}}: Nazwa: {{ engine.name == null ?   'brak danych' : engine.name }}, Liczba Koni Mechanicznych: {{ engine.hp == null ? 'brak danych' : engine.hp }} Typ: {{ engine.type == null ? 'brak danych' : engine.type }}
+                    {{i + 1}}: Nazwa: {{ engine.name == null ?   'brak danych' : engine.name }},
+                    Liczba Koni Mechanicznych: {{ engine.hp == null ? 'brak danych' : engine.hp }},
+                    Typ: {{ engine.type == null ? 'brak danych' : engine.type }}
                   </div>  
                 </div>
               </div>
@@ -61,7 +63,10 @@
               <div class="row">
                 <div class="col-md">
                   <div *ngFor="let typeOfBody of carItem.typesOfBody; let i = index">
-                    {{i + 1}}: Nazwa: {{ typeOfBody.name == null ? 'brak danych' : typeOfBody.name }}, Bagażnik: {{ typeOfBody.carrier == null ? 'brak danych' : typeOfBody.carrier }} Liczba Drzwi: {{ typeOfBody.doors == null ? 'brak danych' : typeOfBody.doors }}
+                    {{i + 1}}: Nazwa: {{ typeOfBody.name == null ? 'brak danych' : typeOfBody.name }},
+                    Bagażnik: {{ typeOfBody.carrier == null ? 'brak danych' : typeOfBody.carrier }},
+                    Liczba Drzwi: {{ typeOfBody.doors == null ? 'brak danych' : typeOfBody.doors }},
+                    Liczba Siedzień: {{ typeOfBody.seats == null ? 'brak danych' : typeOfBody.seats }}
                   </div>
                 </div>
               </div>
