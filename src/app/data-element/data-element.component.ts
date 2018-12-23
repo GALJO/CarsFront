@@ -15,19 +15,21 @@ export class DataElementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.outputValue = this.calculateOutputValue(this.value) + (this.suffix == null ? '' : this.suffix);
+    this.outputValue = this.calculateOutputValue(this.value, this.suffix);
   }
 
-  private calculateOutputValue(value: any): string {
+  private calculateOutputValue(value: any, suffix: string): string {
+    const outSuffix = suffix == null ? '' : suffix;
+
     if (typeof value === 'string') {
-      return value;
+      return value + outSuffix;
     } else if (value instanceof Array) {
       let out = '';
       value.forEach(e => out += e + ', ');
       out = out.slice(0, -2);
-      return out;
+      return out + outSuffix;
     } else if (typeof value === 'number') {
-      return value.toString();
+      return value.toString() + outSuffix;
     }
     return 'brak danych';
   }
