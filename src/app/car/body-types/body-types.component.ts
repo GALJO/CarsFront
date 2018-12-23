@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TypeOfBody} from '../../model/typeOfBody.model';
+import {BodyType} from '../../model/typeOfBody.model';
 
 @Component({
   selector: 'app-body-types',
@@ -8,7 +8,7 @@ import {TypeOfBody} from '../../model/typeOfBody.model';
 })
 export class BodyTypesComponent implements OnInit {
 
-  @Input() bodyTypeList: TypeOfBody[];
+  @Input() bodyTypeList: BodyType[];
 
   constructor() { }
 

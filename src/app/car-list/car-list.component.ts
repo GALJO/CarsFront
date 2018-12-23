@@ -3,7 +3,7 @@ import { Car } from '../model/car.model';
 import { Guid } from '../utils/guid';
 import { GearBox } from '../model/gearbox.model';
 import { Engine } from '../model/engine.model';
-import { TypeOfBody } from '../model/typeOfBody.model';
+import { BodyType } from '../model/typeOfBody.model';
 
 @Component({
   selector: 'app-car-list',
@@ -25,9 +25,9 @@ export class CarListComponent implements OnInit {
         new Engine([85], 'R4 1.5 85KM', 'benzyna')
       ], [ new GearBox([3], 'automatyczna'), new GearBox([4], 'manualna')],
       [
-        new TypeOfBody('500l', [2, 4], 'sedan', [5]),
-        new TypeOfBody('500l', [3, 5], 'hatchback', [5]),
-        new TypeOfBody('500l', [5], 'kombi', [5])
+        new BodyType('500l', [2, 4], 'sedan', [5]),
+        new BodyType('500l', [3, 5], 'hatchback', [5]),
+        new BodyType('500l', [5], 'kombi', [5])
       ],
       'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passat-b1.jpg?alt=media&token=934750e8-b1c8-4f6b-87d2-23ea76328865'));
     // Passat B8
@@ -38,8 +38,8 @@ export class CarListComponent implements OnInit {
         new Engine([180], '1.8 TSI BlueMotion', 'benzyna')
       ], [ new GearBox([6], 'manualna'), new GearBox([6], 'automatyczna'), new GearBox([7], 'automatyczna')],
       [
-        new TypeOfBody('586l - 1152l', [4], 'sedan', [5]),
-        new TypeOfBody('650l - 1780l', [5], 'kombi', [5])
+        new BodyType('586l - 1152l', [4], 'sedan', [5]),
+        new BodyType('650l - 1780l', [5], 'kombi', [5])
       ],
       'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passaatB8.jpg?alt=media&token=de2ad730-0b55-4b91-9be1-29fa8703c34e'));
     // Toyota Corolla Verso II
@@ -50,7 +50,7 @@ export class CarListComponent implements OnInit {
         new Engine([116], '1.0 D-4D 116KM', 'diesel')
       ], [ new GearBox([5], 'manualna')],
       [
-        new TypeOfBody('423l - 1563l', [5], 'minivan', [5, 7])
+        new BodyType('423l - 1563l', [5], 'minivan', [5, 7])
       ],
     'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/toyota-corollaVersoII.JPG?alt=media&token=0b6cefc2-0baf-4797-aab7-674b85e8d619'));
     // Maserati Quattroporte VI
@@ -61,7 +61,7 @@ export class CarListComponent implements OnInit {
         new Engine(null, 'V6 3.0 TwinTurbo', 'diesel')
       ], [ new GearBox([8], 'automatyczna')],
       [
-        new TypeOfBody(null, [4], 'sedan', [4])
+        new BodyType(null, [4], 'sedan', [4])
       ],
     'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/maserati-quattroporteVI.jpg?alt=media&token=0876ef36-ef4e-4186-ab4d-b2099106e879'));
   }

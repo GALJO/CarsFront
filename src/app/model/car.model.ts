@@ -1,6 +1,6 @@
 import { GearBox } from './gearbox.model';
 import { Engine } from './engine.model';
-import { TypeOfBody } from './typeOfBody.model';
+import { BodyType } from './typeOfBody.model';
 
 export class Car {
     public id: string;
@@ -14,11 +14,11 @@ export class Car {
     public eqVersions: string[];
     public engines: Engine[];
     public gearboxes: GearBox[];
-    public typesOfBody: TypeOfBody[];
+    public typesOfBody: BodyType[];
     public image: string;
 
     // tslint:disable:max-line-length
-    constructor(id: string, mark: string, model: string[], productionYear: string, fuelTank: number, designer: string, drive: string[], capacity: number, eqVersions: string[], engines: Engine[], gearboxes: GearBox[], typesOfBody: TypeOfBody[], image: string) {
+    constructor(id: string, mark: string, model: string[], productionYear: string, fuelTank: number, designer: string, drive: string[], capacity: number, eqVersions: string[], engines: Engine[], gearboxes: GearBox[], typesOfBody: BodyType[], image: string) {
         this.id = id;
         this.mark = mark;
         this.model = model;

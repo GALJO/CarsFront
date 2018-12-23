@@ -1,4 +1,4 @@
-export class TypeOfBody {
+export class BodyType {
     public carrier: string;
     public doors: number[];
     public name: string;
