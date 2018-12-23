@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {GearBox} from '../../model/gearbox.model';
+import {GearBox} from '../../../model/gearbox.model';
 
 @Component({
   selector: 'app-gearboxes',

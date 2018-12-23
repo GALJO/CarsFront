@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Engine} from '../../model/engine.model';
+import {Engine} from '../../../model/engine.model';
 
 @Component({
   selector: 'app-engines',

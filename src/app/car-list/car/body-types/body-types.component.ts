@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BodyType} from '../../model/typeOfBody.model';
+import {BodyType} from '../../../model/typeOfBody.model';
 
 @Component({
   selector: 'app-body-types',
