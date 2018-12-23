@@ -1,0 +1,18 @@
+<div class="row mt-2">
+  <div class="col-md">
+    <div class="row">
+      <div class="col-md">
+        <b>Silniki:</b>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <div *ngFor="let engine of engineList; let i = index">
+          {{i + 1}}: Nazwa: {{ engine.name == null ?   'brak danych' : engine.name }},
+          Liczba Koni Mechanicznych: {{ engine.hp == null ? 'brak danych' : engine.hp }},
+          Typ: {{ engine.type == null ? 'brak danych' : engine.type }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

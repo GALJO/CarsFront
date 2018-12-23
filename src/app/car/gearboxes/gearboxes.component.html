@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md">
+    <div class="row">
+      <div class="col-md">
+        <b>Skrzynie Biegów:</b>
+      </div>
+    </div>
+    <div class="row" *ngFor="let gearbox of gearboxList; let i = index">
+      <div class="col-md">
+        {{i + 1}}: Biegi: {{ gearbox.gears == null ? 'brak danych' : gearbox.gears }}, Typ: {{ gearbox.type == null ? 'brak danych' : gearbox.type }}
+      </div>
+    </div>
+  </div>
+</div>

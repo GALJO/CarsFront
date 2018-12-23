@@ -21,57 +21,9 @@
         </div>
         <!-- Tablice obiektów -->
         <div class="col-md-7 mt-2" *ngIf="showMoreInfo">
-          <div class="row">
-            <div class="col-md">
-              <div class="row">
-                <div class="col-md">
-                    Skrzynie Biegów:
-                </div>
-              </div>             
-              <div class="row" *ngFor="let gearbox of carItem.gearboxes; let i = index">
-                <div class="col-md">
-                    {{i + 1}}: Biegi: {{ gearbox.gears == null ? 'brak danych' : gearbox.gears }}, Typ: {{ gearbox.type == null ? 'brak danych' : gearbox.type }}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col-md">
-              <div class="row">
-                <div class="col-md">
-                    Silniki:
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md">
-                  <div *ngFor="let engine of carItem.engines; let i = index">
-                    {{i + 1}}: Nazwa: {{ engine.name == null ?   'brak danych' : engine.name }},
-                    Liczba Koni Mechanicznych: {{ engine.hp == null ? 'brak danych' : engine.hp }},
-                    Typ: {{ engine.type == null ? 'brak danych' : engine.type }}
-                  </div>  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col-md">
-              <div class="row">
-                <div class="col-md">
-                  Wersje Nadwozia:  
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md">
-                  <div *ngFor="let typeOfBody of carItem.typesOfBody; let i = index">
-                    {{i + 1}}: Nazwa: {{ typeOfBody.name == null ? 'brak danych' : typeOfBody.name }},
-                    Bagażnik: {{ typeOfBody.carrier == null ? 'brak danych' : typeOfBody.carrier }},
-                    Liczba Drzwi: {{ typeOfBody.doors == null ? 'brak danych' : typeOfBody.doors }},
-                    Liczba Siedzień: {{ typeOfBody.seats == null ? 'brak danych' : typeOfBody.seats }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <app-gearboxes [gearboxList]="carItem.gearboxes"></app-gearboxes>
+          <app-engines [engineList]="carItem.engines"></app-engines>
+          <app-body-types [bodyTypeList]="carItem.typesOfBody"></app-body-types>
         </div>        
       </div>
       <div class="row">

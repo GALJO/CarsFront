@@ -7,6 +7,9 @@ import { TitleBarComponent } from './title-bar/title-bar.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarComponent } from './car/car.component';
 import { DataElementComponent } from './data-element/data-element.component';
+import { GearboxesComponent } from './car/gearboxes/gearboxes.component';
+import { EnginesComponent } from './car/engines/engines.component';
+import { BodyTypesComponent } from './car/body-types/body-types.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { DataElementComponent } from './data-element/data-element.component';
     TitleBarComponent,
     CarListComponent,
     CarComponent,
-    DataElementComponent
+    DataElementComponent,
+    GearboxesComponent,
+    EnginesComponent,
+    BodyTypesComponent
   ],
   imports: [
     BrowserModule,

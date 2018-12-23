@@ -1,0 +1,19 @@
+<div class="row mt-2">
+  <div class="col-md">
+    <div class="row">
+      <div class="col-md">
+        <b>Wersje Nadwozia:</b>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <div *ngFor="let typeOfBody of bodyTypeList; let i = index">
+          {{i + 1}}: Nazwa: {{ typeOfBody.name == null ? 'brak danych' : typeOfBody.name }},
+          Bagażnik: {{ typeOfBody.carrier == null ? 'brak danych' : typeOfBody.carrier }},
+          Liczba Drzwi: {{ typeOfBody.doors == null ? 'brak danych' : typeOfBody.doors }},
+          Liczba Siedzień: {{ typeOfBody.seats == null ? 'brak danych' : typeOfBody.seats }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
