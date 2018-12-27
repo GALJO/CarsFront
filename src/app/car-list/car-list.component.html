@@ -27,6 +27,7 @@
 <div class="list-group"> 
     <app-car 
         *ngFor="let car of carList"
-        [carItem]="car">
+        [carItem]="car"
+        (deletedCar)="onDeleteCar($event)">
     </app-car>    
 </div>

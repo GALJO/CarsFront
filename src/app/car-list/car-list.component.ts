@@ -74,4 +74,8 @@ export class CarListComponent implements OnInit {
     this.carList.push( this.newCar );
   }
 
+  onDeleteCar(car: Car) {
+    this.carList = this.carList.filter(c => c.id !== car.id);
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Car } from '../../model/car.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Car } from '../../model/car.model';
 export class CarComponent implements OnInit {
 
   @Input() carItem: Car;
+  @Output() deletedCar = new EventEmitter<Car>();
   showMoreInfo: Boolean = false;
 
   constructor() { }
@@ -21,7 +22,7 @@ export class CarComponent implements OnInit {
   }
 
   onDelete() {
-    console.log('Delete');
+    this.deletedCar.emit(this.carItem);
   }
 
   onMoreInfo() {
