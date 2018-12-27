@@ -77,4 +77,12 @@ export class CarListComponent implements OnInit {
   onDeleteCar(car: Car) {
     this.carList = this.carList.filter(c => c.id !== car.id);
   }
+
+  onMarkSortCar() {
+    this.carList = this.carList.sort((c1: Car, c2: Car) => c1.mark < c2.mark ? -1 : 1);
+  }
+
+  onCapacitySortCar() {
+    this.carList = this.carList.sort((c1: Car, c2: Car) => c1.capacity < c2.capacity ? -1 : 1);
+  }
 }
