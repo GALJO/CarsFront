@@ -22,7 +22,9 @@ export class CarComponent implements OnInit {
   }
 
   onDelete() {
-    this.deletedCar.emit(this.carItem);
+    if (confirm('Czy na pewno chcesz usunąć samochód ' + this.carItem.mark + ' ' + this.carItem.model[0] + '?')) {
+      this.deletedCar.emit(this.carItem);
+    }
   }
 
   onMoreInfo() {
