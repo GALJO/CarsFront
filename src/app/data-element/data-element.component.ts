@@ -9,6 +9,7 @@ export class DataElementComponent implements OnInit {
 
   @Input() key: string;
   @Input() value: any;
+  @Input() isMarked: boolean;
   @Input() suffix: string;
   outputValue = '';
 

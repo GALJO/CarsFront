@@ -31,4 +31,7 @@ export class CarComponent implements OnInit {
     this.showMoreInfo = !this.showMoreInfo;
   }
 
+  onMark() {
+    this.carItem.isMarked = !this.carItem.isMarked;
+  }
 }

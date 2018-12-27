@@ -7,7 +7,7 @@
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-5">
-          <app-data-element [key]="'Marka'" [value]="carItem.mark"></app-data-element>
+          <app-data-element [key]="'Marka'" [value]="carItem.mark" [isMarked]="carItem.isMarked"></app-data-element>
           <app-data-element [key]="'Model'" [value]="carItem.model"></app-data-element>
           <app-data-element [key]="'Lata Produkcji'" [value]="carItem.productionYear"></app-data-element>
           <!-- Informacje pokazywane na klik -->
@@ -33,6 +33,7 @@
       <hr />
       <button type="button" class="btn btn-outline-primary" (click)="onEdit()">Edytuj <i class="far fa-edit"></i></button>
       <button type="button" class="btn btn-outline-danger ml-1" (click)="onDelete()">Usuń <i class="fas fa-trash-alt"></i></button>
+      <button type="button" class="btn btn-outline-warning ml-1" (click)="onMark()">Wyróżnij <i class="fas fa-highlighter"></i></button>
     </div>
   </div>
 </li>
