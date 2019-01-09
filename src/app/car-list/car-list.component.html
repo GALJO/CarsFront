@@ -26,11 +26,11 @@
 <div class="btn-group mt-2" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-outline-secondary" (click)="onMarkSortCar()">Sortuj wg marki <i class="fas fa-sort-alpha-down"></i></button>
   <button type="button" class="btn btn-outline-secondary" (click)="onCapacitySortCar()">Sortuj wg ładowności <i class="fas fa-sort-alpha-down"></i></button>
+  <button type="button" class="btn btn-outline-secondary" (click)="onMarkedSortCar()">Sortuj wg wyróżnienia <i class="fas fa-sort-alpha-down"></i></button>
 </div>
 <div class="list-group">
   <app-car
     *ngFor="let car of carList"
-    [carItem]="car"
-    (deletedCar)="onDeleteCar($event)">
+    [carItem]="car">
   </app-car>
 </div>

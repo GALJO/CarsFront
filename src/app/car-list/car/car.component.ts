@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Car } from '../../model/car.model';
+import {CarService} from '../../service/car.service';
 
 @Component({
   selector: 'app-car',
@@ -9,10 +10,9 @@ import { Car } from '../../model/car.model';
 export class CarComponent implements OnInit {
 
   @Input() carItem: Car;
-  @Output() deletedCar = new EventEmitter<Car>();
   showMoreInfo: Boolean = false;
 
-  constructor() { }
+  constructor(private carService: CarService) { }
 
   ngOnInit() {
   }
@@ -23,7 +23,7 @@ export class CarComponent implements OnInit {
 
   onDelete() {
     if (confirm('Czy na pewno chcesz usunąć samochód ' + this.carItem.mark + ' ' + this.carItem.model[0] + '?')) {
-      this.deletedCar.emit(this.carItem);
+      this.carService.deleteCar(this.carItem.id);
     }
   }
 
@@ -32,6 +32,6 @@ export class CarComponent implements OnInit {
   }
 
   onMark() {
-    this.carItem.isMarked = !this.carItem.isMarked;
+    this.carService.markCar(this.carItem.id);
   }
 }
