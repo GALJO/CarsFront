@@ -11,7 +11,7 @@ import {CarService} from '../service/car.service';
 export class CarListComponent implements OnInit {
 
   carList: Car[];
-  newCar = new Car(null, null, null, null, null, null, null, null, null, null, null, null, null);
+  newCar = new Car(null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
   constructor(private carService: CarService) { }
 
