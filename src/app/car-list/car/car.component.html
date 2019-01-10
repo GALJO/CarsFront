@@ -9,7 +9,7 @@
         <div class="col-md-5">
           <app-data-element [key]="'Marka'" [value]="carItem.mark" [isMarked]="carItem.isMarked"></app-data-element>
           <app-data-element [key]="'Model'" [value]="carItem.model"></app-data-element>
-          <app-data-element [key]="'Lata Produkcji'" [value]="carItem.productionYear"></app-data-element>
+          <app-production-year [key]="'Lata Produkcji'" [value1]="carItem.fromProductionYear" [value2]="carItem.toProductionYear"></app-production-year>
           <!-- Informacje pokazywane na klik -->
           <div *ngIf="showMoreInfo">
             <app-data-element [key]="'Zbiornik Paliwa'" [value]="carItem.fuelTank" [suffix]="'l'"></app-data-element>

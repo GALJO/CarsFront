@@ -10,6 +10,7 @@ import { DataElementComponent } from './data-element/data-element.component';
 import { GearboxesComponent } from './car-list/car/gearboxes/gearboxes.component';
 import { EnginesComponent } from './car-list/car/engines/engines.component';
 import { BodyTypesComponent } from './car-list/car/body-types/body-types.component';
+import { ProductionYearComponent } from './car-list/car/production-year/production-year.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BodyTypesComponent } from './car-list/car/body-types/body-types.compone
     DataElementComponent,
     GearboxesComponent,
     EnginesComponent,
-    BodyTypesComponent
+    BodyTypesComponent,
+    ProductionYearComponent
   ],
   imports: [
     BrowserModule,

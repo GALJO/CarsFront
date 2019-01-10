@@ -9,7 +9,8 @@
       <div class="col-md">
         <div *ngFor="let typeOfBody of bodyTypeList; let i = index">
           {{i + 1}}: Nazwa: {{ typeOfBody.name == null ? 'brak danych' : typeOfBody.name }},
-          Bagażnik: {{ typeOfBody.carrier == null ? 'brak danych' : typeOfBody.carrier }},
+          Bagażnik: od {{ typeOfBody.minCarrier == null ? 'brak danych' : typeOfBody.minCarrier + 'l' }} do
+          {{ typeOfBody.maxCarrier == null ? 'brak danych' : typeOfBody.maxCarrier + 'l' }},
           Liczba Drzwi: {{ typeOfBody.doors == null ? 'brak danych' : typeOfBody.doors }},
           Liczba Siedzień: {{ typeOfBody.seats == null ? 'brak danych' : typeOfBody.seats }}
         </div>
