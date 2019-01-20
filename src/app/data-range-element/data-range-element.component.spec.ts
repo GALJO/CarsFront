@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductionYearComponent } from './production-year.component';
+import { DataRangeElementComponent } from './data-range-element.component';
 
-describe('ProductionYearComponent', () => {
-  let component: ProductionYearComponent;
-  let fixture: ComponentFixture<ProductionYearComponent>;
+describe('DataRangeElementComponent', () => {
+  let component: DataRangeElementComponent;
+  let fixture: ComponentFixture<DataRangeElementComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductionYearComponent ]
+      declarations: [ DataRangeElementComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductionYearComponent);
+    fixture = TestBed.createComponent(DataRangeElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

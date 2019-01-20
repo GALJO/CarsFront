@@ -10,7 +10,8 @@ import { DataElementComponent } from './data-element/data-element.component';
 import { GearboxesComponent } from './car-list/car/gearboxes/gearboxes.component';
 import { EnginesComponent } from './car-list/car/engines/engines.component';
 import { BodyTypesComponent } from './car-list/car/body-types/body-types.component';
-import { ProductionYearComponent } from './car-list/car/production-year/production-year.component';
+import { DataRangeElementComponent } from './data-range-element/data-range-element.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,12 @@ import { ProductionYearComponent } from './car-list/car/production-year/producti
     GearboxesComponent,
     EnginesComponent,
     BodyTypesComponent,
-    ProductionYearComponent
+    DataRangeElementComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

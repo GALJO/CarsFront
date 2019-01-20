@@ -2,11 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-production-year',
-  templateUrl: './production-year.component.html',
-  styleUrls: ['./production-year.component.css']
+  templateUrl: './data-range-element.component.html',
+  styleUrls: ['./data-range-element.component.css']
 })
 
-export class ProductionYearComponent implements OnInit {
+export class DataRangeElementComponent implements OnInit {
   @Input() key: string;
   @Input() value1: number;
   @Input() value2: any;
