@@ -12,6 +12,8 @@ import { EnginesComponent } from './car-list/car/engines/engines.component';
 import { BodyTypesComponent } from './car-list/car/body-types/body-types.component';
 import { DataRangeElementComponent } from './data-range-element/data-range-element.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CarEditComponent } from './car-edit/car-edit.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AppRoutingModule } from './app-routing.module';
     GearboxesComponent,
     EnginesComponent,
     BodyTypesComponent,
-    DataRangeElementComponent
+    DataRangeElementComponent,
+    CarEditComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
