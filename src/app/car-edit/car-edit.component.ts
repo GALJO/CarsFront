@@ -25,7 +25,7 @@ export class CarEditComponent implements OnInit {
 
   private getCar() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.car = this.carService.getCar(id);
+    this.carService.getCar(id).subscribe(c => this.car = c);
   }
 
   goBack(): void {

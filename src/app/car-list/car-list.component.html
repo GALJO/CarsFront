@@ -28,9 +28,9 @@
 <div ngbDropdown class="d-inline-block mt-2">
   <button class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>Sortowanie</button>
   <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-    <button type="button" class="dropdown-item" (click)="onMarkSortCar()">Sortuj wg marki <i class="fas fa-sort-alpha-down"></i></button>
-    <button type="button" class="dropdown-item" (click)="onCapacitySortCar()">Sortuj wg ładowności <i class="fas fa-sort-alpha-down"></i></button>
-    <button type="button" class="dropdown-item" (click)="onMarkedSortCar()">Sortuj wg wyróżnienia <i class="fas fa-sort-alpha-down"></i></button>
+    <button type="button" class="dropdown-item" (click)="onSortByMark()">Sortuj wg marki <i class="fas fa-sort-alpha-down"></i></button>
+    <button type="button" class="dropdown-item" (click)="onSortByCapacity()">Sortuj wg ładowności <i class="fas fa-sort-alpha-down"></i></button>
+    <button type="button" class="dropdown-item" (click)="onSortByIsMarked()">Sortuj wg wyróżnienia <i class="fas fa-sort-alpha-down"></i></button>
   </div>
 </div>
 
@@ -38,52 +38,52 @@
 <div ngbDropdown class="d-inline-block mt-2 ml-2">
   <button class="btn btn-outline-secondary" id="dropdownBasic2" ngbDropdownToggle>Tagi</button>
   <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-    <button type="button" class="dropdown-item" (click)="tag('')">Resetuj <i class="fas fa-undo"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('')">Resetuj <i class="fas fa-undo"></i></button>
     <hr>
     <div class="dropdown-header">Rodzaj</div>
-    <button type="button" class="dropdown-item" (click)="tag('osobowe')">Osobowe <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('ciężarowe')">Ciężarowe <i class="fas fa-truck"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('osobowe')">Osobowe <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('ciężarowe')">Ciężarowe <i class="fas fa-truck"></i></button>
     <hr>
     <div class="dropdown-header">Lata</div>
-    <button type="button" class="dropdown-item" (click)="tag('zabytkowe')">Zabytkowe <i class="fas fa-archway"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('klasyk')">Klasyki <i class="fas fa-archway"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('stare')">Stare <i class="fas fa-car-crash"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('nowe')">Nowe <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('zabytkowe')">Zabytkowe <i class="fas fa-archway"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('klasyk')">Klasyki <i class="fas fa-archway"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('stare')">Stare <i class="fas fa-car-crash"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('nowe')">Nowe <i class="fas fa-car"></i></button>
     <hr>
     <div class="dropdown-header">Produkcja</div>
-    <button type="button" class="dropdown-item" (click)="tag('produkowane')">Produkowane <i class="fas fa-industry"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('nieprodukowane')">Nieprodukowane <i class="fas fa-ban mr-1"></i><i class="fas fa-industry"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('produkowane')">Produkowane <i class="fas fa-industry"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('nieprodukowane')">Nieprodukowane <i class="fas fa-ban mr-1"></i><i class="fas fa-industry"></i></button>
     <hr>
     <div class="dropdown-header">Użytek</div>
-    <button type="button" class="dropdown-item" (click)="tag('luksusowe')">Luksusowe <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('sportowe')">Sportowe <i class="fas fa-flag-checkered"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('miejskie')">Miejskie <i class="fas fa-city"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('terenowe')">Terenowe <i class="fas fa-truck-monster"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('luksusowe')">Luksusowe <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('sportowe')">Sportowe <i class="fas fa-flag-checkered"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('miejskie')">Miejskie <i class="fas fa-city"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('terenowe')">Terenowe <i class="fas fa-truck-monster"></i></button>
     <hr>
     <div class="dropdown-header">Klasy</div>
-    <button type="button" class="dropdown-item" (click)="tag('klasa średnia')">Klasa średnia <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('kompaktowe')">Klasa kompaktowa <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('klasa premium')">Klasa premium <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('klasa średnia')">Klasa średnia <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('kompaktowe')">Klasa kompaktowa <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('klasa premium')">Klasa premium <i class="fas fa-car"></i></button>
     <hr>
     <div class="dropdown-header">Klasy Specjalne</div>
-    <button type="button" class="dropdown-item" (click)="tag('minivan')">Minivan <i class="fas fa-shuttle-van"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('ponycar')">Ponycar <i class="fas fa-flag-checkered"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('supersamochód')">Supersamochody <i class="fas fa-flag-checkered"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('limuzyna')">Limuzyny <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('minivan')">Minivan <i class="fas fa-shuttle-van"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('ponycar')">Ponycar <i class="fas fa-flag-checkered"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('supersamochód')">Supersamochody <i class="fas fa-flag-checkered"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('limuzyna')">Limuzyny <i class="fas fa-car"></i></button>
     <hr>
     <div class="dropdown-header">Segmenty</div>
-    <button type="button" class="dropdown-item" (click)="tag('segment A')">Autosegment A <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment B')">Autosegment B <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment C')">Autosegment C <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment D')">Autosegment D <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment E')">Autosegment E <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment F')">Autosegment F <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment F+')">Autosegment F+ <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment G')">Autosegment G <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment G+')">Autosegment G+ <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment H')">Autosegment H <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment I')">Autosegment I <i class="fas fa-car"></i></button>
-    <button type="button" class="dropdown-item" (click)="tag('segment K')">Autosegment K <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment A')">Autosegment A <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment B')">Autosegment B <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment C')">Autosegment C <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment D')">Autosegment D <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment E')">Autosegment E <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment F')">Autosegment F <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment F+')">Autosegment F+ <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment G')">Autosegment G <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment G+')">Autosegment G+ <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment H')">Autosegment H <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment I')">Autosegment I <i class="fas fa-car"></i></button>
+    <button type="button" class="dropdown-item" (click)="onFilterByTag('segment K')">Autosegment K <i class="fas fa-car"></i></button>
 
 
   </div>
