@@ -1,5 +1,52 @@
-<h3 style="text-align: center;">
-  tu będą dane samochodu o id {{ id }}
-</h3>
-
-<button type="button" class="btn btn-outline-success" (click)="goBack()">Wróć</button>
+<div *ngIf="car !== undefined">
+<!--Marka-->
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <label for="formGroupExampleInput">Marka</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Marka" [(ngModel)]="car.mark">
+    </div>
+  </div>
+<!--Model-->
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <label for="formGroupExampleInput1">Modele</label>
+      <input type="text" class="form-control mt-2" id="formGroupExampleInput0" placeholder="Model" *ngFor="let model of car.model; let i = index" [(ngModel)]="car.model[i]">
+    </div>
+  </div>
+<!--Lata Produkcji-->
+  <div class="row mt-2">
+  <!--Od-->
+    <div class="col-md-6">
+      <label for="formGroupExampleInput1">Początek Produkcji (rok)</label>
+      <input type="number" class="form-control" id="formGroupExampleInput1" placeholder="Początek Produkcji" [(ngModel)]="car.fromProductionYear">
+    </div>
+  <!--Do-->
+    <div class="col-md-6">
+      <label for="formGroupExampleInput2">Koniec Produkcji* (rok)</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Koniec Produkcji" [(ngModel)]="car.toProductionYear">
+    </div>
+  </div>
+<!--Zbiornik Paliwa-->
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <label for="formGroupExampleInput3">Pojemność Zbiornika Paliwa (litry)</label>
+      <input type="number" class="form-control" id="formGroupExampleInput3" placeholder="Pojemność Zbiornika Paliwa (l)" [(ngModel)]="car.fuelTank">
+    </div>
+  </div>
+<!--Ładowność-->
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <label for="formGroupExampleInput4">Ładowność (kilogramy)</label>
+      <input type="number" class="form-control" id="formGroupExampleInput4" placeholder="Ładowność (kg)" [(ngModel)]="car.capacity">
+    </div>
+  </div>
+<!--Zdjęcie-->
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <label for="formGroupExampleInput5">Zdjęcie (link)</label>
+      <input type="text" class="form-control" id="formGroupExampleInput5" placeholder="Zdjęcie (link)" [(ngModel)]="car.image">
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-outline-success mt-2" (click)="goBack()">Wróć</button><br>
+<small *ngIf="car !== undefined">*jeżeli samochód jest produkowany do dziś wpisać null</small>

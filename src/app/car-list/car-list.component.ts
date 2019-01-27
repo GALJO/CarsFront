@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Car} from '../model/car.model';
 import {Guid} from '../utils/guid';
 import {CarService} from '../service/car.service';
+import {style} from '@angular/animations';
 
 @Component({
   selector: 'app-car-list',
@@ -11,7 +12,7 @@ import {CarService} from '../service/car.service';
 export class CarListComponent implements OnInit {
 
   carList: Car[];
-  newCar = new Car(null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+  newCar = new Car(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
   constructor(private carService: CarService) { }
 
@@ -37,5 +38,9 @@ export class CarListComponent implements OnInit {
 
   onMarkedSortCar() {
     this.carService.sortCarListByMarked();
+  }
+
+  tag(name: string) {
+    this.carService.filterCarListByTag(name);
   }
 }

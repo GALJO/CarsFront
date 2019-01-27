@@ -14,6 +14,7 @@ import { DataRangeElementComponent } from './data-range-element/data-range-eleme
 import { AppRoutingModule } from './app-routing.module';
 import { CarEditComponent } from './car-edit/car-edit.component';
 import { HomeComponent } from './home/home.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -57,6 +57,18 @@ export class CarService {
     this.emitCarListChanged();
   }
 
+  public filterCarListByTag(tag: string) {
+    this.initCarList();
+    if(tag !== '') {
+      this.carList = this.carList.filter(c => c.carTag.find(t => t === tag));
+    }
+    this.emitCarListChanged();
+  }
+
+  public getCar(id: string): Car {
+    return this.carList.find(c => c.id === id);
+  }
+
   private emitCarListChanged(): void {
     this.carListChanged.emit(this.carList);
   }
@@ -76,7 +88,8 @@ export class CarService {
         new BodyType(500, 500, [3, 5], 'hatchback', [5]),
         new BodyType(500, 500, [5], 'kombi', [5])
       ],
-      'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passat-b1.jpg?alt=media&token=934750e8-b1c8-4f6b-87d2-23ea76328865'));
+      'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passat-b1.jpg?alt=media&token=934750e8-b1c8-4f6b-87d2-23ea76328865',
+      ['stare', 'nieprodukowane', 'osobowe', 'klasa średnia', 'segment D']));
     // Passat B8
     this.carList.push( new Car(Guid.newGuid(), 'Volkswagen', ['Passat B8', 'Passat GT'], 2014, 'null', 70, null, ['przedni', '4Motion'], null, ['Trendline', 'ComfortLine', 'HighLine', 'R-line', 'Alltrack'],
       [
@@ -88,7 +101,8 @@ export class CarService {
         new BodyType(586, 1152, [4], 'sedan', [5]),
         new BodyType(650, 1780, [5], 'kombi', [5])
       ],
-      'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passaatB8.jpg?alt=media&token=de2ad730-0b55-4b91-9be1-29fa8703c34e'));
+      'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/volkswagen-passaatB8.jpg?alt=media&token=de2ad730-0b55-4b91-9be1-29fa8703c34e',
+      ['nowe', 'produkowane', 'osobowe', 'luksusowe', 'klasa średnia', 'segment D']));
     // Toyota Corolla Verso II
     this.carList.push( new Car(Guid.newGuid(), 'Toyota', ['Corolla Verso II'], 2004, 2009, 55, null, null, 425, null,
       [
@@ -99,7 +113,8 @@ export class CarService {
       [
         new BodyType(423, 1563, [5], 'minivan', [5, 7])
       ],
-      'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/toyota-corollaVersoII.JPG?alt=media&token=0b6cefc2-0baf-4797-aab7-674b85e8d619'));
+      'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/toyota-corollaVersoII.JPG?alt=media&token=0b6cefc2-0baf-4797-aab7-674b85e8d619',
+      ['osobowe', 'rodzinne', 'nowe', 'nieprodukowane', 'minivan', 'segment MPV']));
     // Maserati Quattroporte VI
     this.carList.push( new Car(Guid.newGuid(), 'Maserati', ['Quattroporte VI'], 2012, 'null', null, 'Lorenzo Ramaciotti', ['tylny', 'AWD'], null, ['Ermenegildo Zegna'],
       [
@@ -110,6 +125,7 @@ export class CarService {
       [
         new BodyType(null, null, [4], 'sedan', [4])
       ],
-      'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/maserati-quattroporteVI.jpg?alt=media&token=0876ef36-ef4e-4186-ab4d-b2099106e879'));
+      'https://firebasestorage.googleapis.com/v0/b/cars-7bb35.appspot.com/o/maserati-quattroporteVI.jpg?alt=media&token=0876ef36-ef4e-4186-ab4d-b2099106e879',
+      ['osobowe', 'luksusowe', 'segment F', 'nowe', 'produkowane']));
   }
 }

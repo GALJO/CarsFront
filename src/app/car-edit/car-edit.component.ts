@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
+import {CarService} from '../service/car.service';
+import {Car} from '../model/car.model';
 
 @Component({
   selector: 'app-car-edit',
@@ -9,18 +11,21 @@ import {Location} from '@angular/common';
 })
 export class CarEditComponent implements OnInit {
 
-  id: string;
+  car: Car;
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    private carService: CarService) { }
+
 
   ngOnInit() {
     this.getCar();
   }
 
   private getCar() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
+    this.car = this.carService.getCar(id);
   }
 
   goBack(): void {
