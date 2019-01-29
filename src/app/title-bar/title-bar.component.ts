@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TitleBarComponent {
 
   title: String = 'Carspedia';
-  version: String = '0.1 Beta';
+  version: String = '0.1 Open Beta';
 
   getVersion() {
     return this.version;

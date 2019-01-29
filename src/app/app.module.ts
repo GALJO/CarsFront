@@ -17,6 +17,7 @@ import { DataRangeElementComponent } from './data-range-element/data-range-eleme
 import { AppRoutingModule } from './app-routing.module';
 import { CarEditComponent } from './car-edit/car-edit.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './home/home.component';
     BodyTypesComponent,
     DataRangeElementComponent,
     CarEditComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
