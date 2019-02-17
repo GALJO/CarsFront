@@ -1,10 +1,14 @@
 <li class="list-group-item list-group-item-action mt-2 list-group-item-light">
-  <div class="row pointer" (click)="onMoreInfo()">
-    <div class="col-md-2">
-      <img src="{{ carItem.image == null ? '/' : carItem.image }}" class="img-fluid" alt="{{ carItem.mark == null ? 'brak' : carItem.mark }} {{ carItem.model == null ? 'danych' : carItem.model }}">
-    </div>
 
-    <div class="col-md-10">
+  <div class="row">
+    <div class="col-md-2">
+      <ngb-carousel *ngIf="carItem.images[0]" [interval]="0">
+        <ng-template ngbSlide *ngFor="let image of carItem.images">
+          <img src="{{ image }}" class="img-fluid" alt="{{ carItem.mark == null ? 'brak' : carItem.mark }} {{ carItem.model == null ? 'danych' : carItem.model }}">
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-md-10 pointer" (click)="onMoreInfo()">
       <div class="row">
         <div class="col-md-5">
           <app-data-element [key]="'Marka'" [value]="carItem.mark" [isMarked]="carItem.isMarked"></app-data-element>
@@ -28,6 +32,7 @@
       </div>
     </div>
   </div>
+
   <div class="row" *ngIf="showMoreInfo">
     <div class="col-12">
       <hr>
@@ -36,4 +41,5 @@
       <button type="button" class="btn btn-outline-warning ml-1" (click)="onMark()">Wyróżnij <i class="fas fa-highlighter"></i></button>
     </div>
   </div>
+
 </li>
