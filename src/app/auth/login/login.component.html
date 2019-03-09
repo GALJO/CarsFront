@@ -2,14 +2,17 @@
   <div class="form-group">
     <label for="exampleInputEmail1">Adres Email</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" [(ngModel)]="email">
-    <small id="emailHelp" class="form-text text-muted">Nie udostępnimy twojego emaila nikomu.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Hasło</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło" [(ngModel)]="password">
-    <small class="form-text text-muted">Pamiętaj, aby stworzyć silne hasło!</small>
   </div>
   <div style="text-align: center">
     <button type="submit" class="btn btn-outline-primary" (click)="login()">Zaloguj się</button>
+  </div>
+  <div class="mt-2" *ngIf="authService.hasLogginErrorOccured()">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      Nieprawidłowy <strong>email</strong> lub <strong>hasło</strong>...
+    </div>
   </div>
 </div>

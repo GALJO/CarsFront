@@ -5,4 +5,10 @@
       <a class="nav-link" routerLink="/car-list">Lista Samochodów <i class="fas fa-list"></i></a>
     </li>
   </ul>
+  <span class="nav-item" *ngIf="!authService.isLoggedIn()">
+      <button type="button" class="btn btn-outline-primary" routerLink="/login">Zaloguj</button>
+  </span>
+  <span class="nav-item" *ngIf="authService.isLoggedIn()">
+      <button type="button" class="btn btn-outline-info" (click)="authService.logout()">Wyloguj</button>
+  </span>
 </nav>
