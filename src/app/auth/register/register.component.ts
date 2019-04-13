@@ -50,8 +50,8 @@ export class RegisterComponent implements OnInit {
     let isOk = true;
 
      if (this.password.length > 0) {
-       if (this.password.length < 4) {
-         this.errorMessages.push('Hasło musi mieć minimum 4 znaki');
+       if (this.password.length < 6) {
+         this.errorMessages.push('Hasło musi mieć minimum 6 znaków');
          isOk = false;
        }
        if (this.password !== this.repeatedPassword) {

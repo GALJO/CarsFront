@@ -11,8 +11,14 @@
     <button type="submit" class="btn btn-outline-primary" (click)="login()">Zaloguj się</button>
   </div>
   <div class="mt-2" *ngIf="authService.hasLogginErrorOccured()">
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="'INVALID_PASSWORD,INVALID_EMAIL'.includes(authService.getLoginErrorCode())">
       Nieprawidłowy <strong>email</strong> lub <strong>hasło</strong>...
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="'USER_DISABLED'.includes(authService.getLoginErrorCode())">
+      Użytkownik został <strong>zablokowany</strong> przez <strong>administratora</strong>...
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="!'INVALID_PASSWORD,INVALID_EMAIL,USER_DISABLED'.includes(authService.getLoginErrorCode())">
+      Coś poszło <strong>nie tak</strong>...
     </div>
   </div>
 </div>

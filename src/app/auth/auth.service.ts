@@ -17,7 +17,7 @@ const httpOptions = {
 export class AuthService {
 
   private token: string = null;
-  private loginError = false;
+  private loginError: string;
   private signUpError = false;
 
   constructor(private httpClient: HttpClient, private router: Router) {
@@ -29,10 +29,12 @@ export class AuthService {
       .subscribe(
         response => {
           this.token = response.idToken;
-          this.loginError = false;
+          this.loginError = null;
           this.router.navigate(['/car-list']);
         },
-        error => this.loginError = true);
+        error => {
+          this.loginError = error.error.error.message;
+        });
   }
 
   public signUp(email: string, passwd: string) {
@@ -54,6 +56,10 @@ export class AuthService {
   }
 
   public hasLogginErrorOccured() {
+    return this.loginError != null;
+  }
+
+  public getLoginErrorCode() {
     return this.loginError;
   }
 
