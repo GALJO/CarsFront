@@ -8,12 +8,12 @@ import {AuthService} from '../auth/auth.service';
 })
 export class TitleBarComponent {
 
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) {
 
   }
 
   title: String = 'Carspedia';
-  version: String = '0.1 Open Beta';
+  version: String = '0.2 Open Beta';
 
   getVersion() {
     return this.version;

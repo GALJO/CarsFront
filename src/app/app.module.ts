@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CarEditComponent } from './car-edit/car-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoginComponent } from './auth/login/login.component';
     DataRangeElementComponent,
     CarEditComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+<div class="mt-2 signupform">
+  <div class="form-group">
+    <label for="emailInput">Adres Email</label>
+    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email" [(ngModel)]="email" (ngModelChange)="validate()">
+    <small class="form-text text-muted">Nie udostępnimy twojego maila nikomu</small>
+  </div>
+  <div class="form-group">
+    <label for="passwordInput">Hasło</label>
+    <input type="password" class="form-control" id="passwordInput" placeholder="Hasło" [(ngModel)]="password" (ngModelChange)="validate()">
+    <small class="form-text text-muted">Pamiętaj aby stworzyć silne hasło</small>
+  </div>
+  <div class="form-group">
+    <label for="repeatedPasswordInput">Powtórz Hasło</label>
+    <input type="password" class="form-control" id="repeatedPasswordInput" placeholder="Hasło" [(ngModel)]="repeatedPassword" (ngModelChange)="validate()">
+  </div>
+  <div class="mt-2">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngFor="let errorMessage of errorMessages">
+      {{ errorMessage }}
+    </div>
+  </div>
+  <div style="text-align: center">
+    <button type="submit" class="btn btn-outline-info" [disabled]="!canSubmit" (click)="authService.signUp(email, password)">Załóż Konto</button>
+  </div>
+  <div class="mt-2" *ngIf="authService.hasSignUpErrorOccured()">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      Ten <strong>email</strong> jest już w <strong>użyciu</strong>...
+    </div>
+  </div>
+</div>

@@ -11,4 +11,7 @@
   <span class="nav-item" *ngIf="authService.isLoggedIn()">
       <button type="button" class="btn btn-outline-info" (click)="authService.logout()">Wyloguj</button>
   </span>
+  <span class="nav-item ml-2" *ngIf="!authService.isLoggedIn()">
+      <button type="button" class="btn btn-outline-info" routerLink="/sign-up">Zarejestruj się</button>
+  </span>
 </nav>
