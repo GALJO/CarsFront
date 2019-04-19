@@ -4,6 +4,9 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/car-list">Lista Samochodów <i class="fas fa-list"></i></a>
     </li>
+    <li class="nav-item">
+      <small>Copyright {{ developer }} 2019. Wszelkie prawa zastrzeżone.</small>
+    </li>
   </ul>
   <span class="nav-item" *ngIf="!authService.isLoggedIn()">
       <button type="button" class="btn btn-outline-primary" routerLink="/login">Zaloguj</button>

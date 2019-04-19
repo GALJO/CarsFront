@@ -14,6 +14,7 @@ export class TitleBarComponent {
 
   title: String = 'Carspedia';
   version: String = '0.2 Open Beta';
+  developer: String = 'Jan Oleński'
 
   getVersion() {
     return this.version;
