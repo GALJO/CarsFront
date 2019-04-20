@@ -16,12 +16,12 @@ export class Car {
     public engines: Engine[];
     public gearboxes: GearBox[];
     public typesOfBody: BodyType[];
-    public images: string[];
+    public imagesSmall: string[];
     public carTag: string[];
     public isMarked: boolean;
 
     // tslint:disable:max-line-length
-    constructor(id: string, mark: string, model: string[], fromProductionYear: number, toProductionYear: any, fuelTank: number, designer: string, drive: string[], capacity: number, eqVersions: string[], engines: Engine[], gearboxes: GearBox[], typesOfBody: BodyType[], images: string[], carTag: string[]) {
+    constructor(id: string, mark: string, model: string[], fromProductionYear: number, toProductionYear: any, fuelTank: number, designer: string, drive: string[], capacity: number, eqVersions: string[], engines: Engine[], gearboxes: GearBox[], typesOfBody: BodyType[], imagesSmall: string[], carTag: string[]) {
         this.id = id;
         this.mark = mark;
         this.model = model;
@@ -35,7 +35,7 @@ export class Car {
         this.engines = engines;
         this.gearboxes = gearboxes;
         this.typesOfBody = typesOfBody;
-        this.images = images;
+        this.imagesSmall = imagesSmall;
         this.carTag = carTag;
         this.isMarked = false;
     }

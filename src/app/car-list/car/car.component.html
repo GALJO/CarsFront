@@ -2,8 +2,8 @@
 
   <div class="row">
     <div class="col-md-2">
-      <ngb-carousel *ngIf="carItem.images[0]" [interval]="0">
-        <ng-template ngbSlide *ngFor="let image of carItem.images">
+      <ngb-carousel *ngIf="carItem.imagesSmall[0]" [interval]="0">
+        <ng-template ngbSlide *ngFor="let image of carItem.imagesSmall">
           <img src="{{ image }}" class="img-fluid" alt="{{ carItem.mark == null ? 'brak' : carItem.mark }} {{ carItem.model == null ? 'danych' : carItem.model }}">
         </ng-template>
       </ngb-carousel>
